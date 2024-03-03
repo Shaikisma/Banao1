@@ -4,7 +4,8 @@ import { BsSearch } from "react-icons/bs";
 import down_Arrow from "../../assets/baseline-arrow_drop_down-24px.jpg";
 
 const Navbar = () => {
-  const [loggedIn, setloggedIn] = useState(false);
+  // const [loggedIn, setloggedIn] = useState(false);
+  const loggedIn = false;
   return (
     <>
       <nav
