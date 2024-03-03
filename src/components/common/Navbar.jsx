@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import nav_icon from "../../assets/nav_icon.png";
 import { BsSearch } from "react-icons/bs";
 import down_Arrow from "../../assets/baseline-arrow_drop_down-24px.jpg";
