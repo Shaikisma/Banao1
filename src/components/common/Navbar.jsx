@@ -8,10 +8,10 @@ import AuthModal from "../core/AuthModal";
 import { AuthContext } from "../MyContext";
 
 const Navbar = () => {
-  // const [loggedIn, setloggedIn] = useState(false);
+
   const [menu, setMenu] = useState(false);
   
-  // const loggedIn = true;
+ 
 
   const { isLoggedIn, logout, modal, setModal } =useContext(AuthContext);
   return (
