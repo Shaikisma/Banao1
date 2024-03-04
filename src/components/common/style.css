@@ -1,43 +1,60 @@
+/* navbar */
+.profile {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+.profile-menu-list {
+  position: absolute;
+  top: 0;
+  transform: translateY(40%) translateX(-10%);
+}
+
 /* banner css */
-.overlap-container {
+.banner-1 {
   position: relative;
   width: 100%;
   height: 440px;
+  max-height: 440px;
+  overflow: hidden;
+}
+.banner-2 {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  max-height: 260px;
   overflow: hidden;
 }
 
-.overlap-container::before,
-.overlap-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.join-grp {
+  color: white;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
-.overlap-container::before {
-  background-image: url("../../assets/banner_image.png");
-  z-index: 1;
+.join-grp:hover {
+  color: black;
 }
 
-.overlap-container::after {
-  background-image: url("../../assets/banner_fade.png");
-  z-index: 2;
+.lg-hidden {
+  display: none;
 }
 
-.banner-content {
-  position: absolute;
-  color: #ffffff;
-  transform: translateY(-170%);
-  line-height: 13px;
-  width: 100%;
-  bottom: 10;
-  left: 10;
-  z-index: 3;
+.banner-title {
+  font-size: 36px;
+  color: white;
+  font-weight: 500;
+  padding-left: 50px;
+}
+
+.banner-subtitle {
+  font-size: 17px;
+  color: lightgrey;
+  padding-left: 50px;
 }
 
 /* top bar css */
@@ -63,20 +80,55 @@
 
 @media screen and (max-width: 768px) {
   /* Styles for screens up to 768px wide (e.g., smartphones) */
+  .join-grp {
+    font-size: 10px;
+  }
 
-  /* .card{
-    width: 90%;
-  } */
+  .banner-title {
+    font-size: 22px;
+    padding-left: 5px;
+  }
+
+  .banner-subtitle {
+    font-size: 17px;
+    padding-left: 5px;
+  }
+}
+
+.modal-content {
+  background-color: transparent;
+  border: none;
+ 
+}
+
+.modal-dialog {
+  background-color: transparent;
+  /* color: aliceblue; */
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /* Styles for screens between 768px and 992px wide (e.g., tablets) */
+  .banner-title {
+    font-size: 22px;
+    padding-left: 5px;
+  }
+
+  .banner-subtitle {
+    font-size: 17px;
+    padding-left: 5px;
+  }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   /* Styles for screens between 992px and 1200px wide (e.g., small desktops) */
+  .lg-hidden {
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   /* Styles for screens wider than 1200px (e.g., large desktops) */
+  .lg-hidden {
+    opacity: 0;
+  }
 }

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import { FaCaretDown } from "react-icons/fa";
 import { Dropdown, Nav } from "react-bootstrap";
 import { MdGroupAdd } from "react-icons/md";
 import { IoMdExit } from "react-icons/io";
+import { AuthContext } from "../MyContext";
 
 // 4000
 
 const Topbar = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <>
       {/* for desktop */}
@@ -53,37 +55,40 @@ const Topbar = () => {
             </nav>
 
             <div className="d-flex gap-3 justify-content-center align-items-center">
-              {/* dropdown */}
+              {isLoggedIn ? (
+                <>
+                  {/* leave group */}
+                  <div
+                    className=" d-flex gap-2 border-1  text-center px-3   cursor-pointer fw-semibold rounded-2"
+                    style={{
+                      backgroundColor: "#F1F3F5",
+                      border: "1px solid gray",
+                      color: "#5C5C5C",
+                      outline: "none",
+                    }}
+                  >
+                    <IoMdExit className=" write-post " size={22} />
+                    <p className=" pt-2">Leave Group</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* write a post */}
+                  <div
+                    className=" d-flex gap-2 border-1  text-center px-3 fw-semibold rounded-2"
+                    style={{ cursor: "pointer", backgroundColor: "#EDEEF0" }}
+                  >
+                    <p className=" pt-2">Write a post</p>
+                    <FaCaretDown className=" write-post " size={22} />
+                  </div>
 
-              {/*  */}
-              {/* write a post */}
-              <div
-                className=" d-flex gap-2 border-1  text-center px-3 fw-semibold rounded-2"
-                style={{ cursor: "pointer", backgroundColor: "#EDEEF0" }}
-              >
-                <p className=" pt-2">Write a post</p>
-                <FaCaretDown className=" write-post " size={22} />
-              </div>
-
-              {/* join group */}
-              <div className=" d-flex gap-2 border-1  text-center px-3 bg-primary text-white cursor-pointer fw-semibold rounded-2">
-                <MdGroupAdd className=" write-post " size={22} />
-                <p className=" pt-2">Join Group</p>
-              </div>
-
-              {/* leave group */}
-              <div
-                className=" d-flex gap-2 border-1  text-center px-3   cursor-pointer fw-semibold rounded-2"
-                style={{
-                  backgroundColor: "#F1F3F5",
-                  border: "1px solid gray",
-                  color: "#5C5C5C",
-                  outline: "none",
-                }}
-              >
-                <IoMdExit className=" write-post " size={22} />
-                <p className=" pt-2">Leave Group</p>
-              </div>
+                  {/* join group */}
+                  <div className=" d-flex gap-2 border-1  text-center px-3 bg-primary text-white cursor-pointer fw-semibold rounded-2">
+                    <MdGroupAdd className=" write-post " size={22} />
+                    <p className=" pt-2">Join Group</p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -91,7 +96,7 @@ const Topbar = () => {
 
       {/* for mobile */}
       <div className=" container-fluid mx-auto d-flex d-lg-none justify-content-between align-items-center my-2 fw-semibold">
-        <div>Post(386)</div>
+        <div className=" fw-bold">Post(386)</div>
         <div>
           <Dropdown>
             <Dropdown.Toggle
