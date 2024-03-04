@@ -45,9 +45,9 @@ const AuthModal = ({ modal, setModal }) => {
               {!login && <SignUp setLogin={setLogin} />}
               {login && <Login setLogin={setLogin} />}
               <div className={`${login ? "mt-4" : ""}`}>
-                <a
+                <p
                   className="btn d-flex justify-content-center px-3 mb-2 mt-2 btn-light border fw-semibold"
-                  href="#"
+                  
                 >
                   <svg
                     width={19}
@@ -74,10 +74,10 @@ const AuthModal = ({ modal, setModal }) => {
                     />
                   </svg>
                   <span className="ms-2">Sign in with Google</span>
-                </a>
-                <a
+                </p>
+                <p
                   className="btn d-flex justify-content-center px-3 btn-light border fw-semibold"
-                  href="#"
+                  
                 >
                   <svg
                     width={22}
@@ -92,7 +92,7 @@ const AuthModal = ({ modal, setModal }) => {
                     />
                   </svg>
                   <span className="ms-2">Sign in with Facebook</span>
-                </a>
+                </p>
               </div>
               {login && (
                 <div className="d-flex text-center w-100 h-25 align-items-center">
